@@ -1,0 +1,36 @@
+{
+  "batch_size": 32,
+  "data_format": "channels_first",
+  "callback_list": {
+    "CSVLogger": {
+      "append": true,
+      "filename": "",
+      "separator": ";"
+    },
+    "ModelCheckpoint": {
+      "filepath": "",
+      "save_best_only": true,
+      "verbose": 0
+    },
+    "ReduceLROnPlateau": {
+      "factor": 0.3,
+      "min_lr": 1e-05,
+      "monitor": "loss",
+      "patience": 3,
+      "verbose": 1
+    },
+    "TerminateOnNaN": {}
+  },
+  "data_path": "D:/imagenet-object-localization-challenge/db_extract_miccai.h5",
+  "epochs": 100,
+  "experiment_folder": "D:/imagenet-object-localization-challenge/ima206",
+  "generator_seed": 0,
+  "optimizer_parameters": [
+    {
+      "model_name": "model",
+      "optimizer_name": "Adam",
+      "lr": 0.001
+    }
+  ],
+  "split_path": "D:/imagenet-object-localization-challenge/split_extract_test.json"
+}
